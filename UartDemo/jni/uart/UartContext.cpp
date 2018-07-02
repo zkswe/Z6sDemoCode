@@ -23,7 +23,6 @@ UartContext::UartContext() :
 	mUartID(0),
 	mDataBufPtr(NULL),
 	mDataBufLen(0) {
-
 }
 
 UartContext::~UartContext() {

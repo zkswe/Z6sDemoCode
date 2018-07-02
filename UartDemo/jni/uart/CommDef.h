@@ -8,6 +8,8 @@
 #ifndef _UART_COMMDEF_H_
 #define _UART_COMMDEF_H_
 
+#include <asm/termbits.h>
+
 #ifndef BYTE
 typedef unsigned char	BYTE;
 #endif

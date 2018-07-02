@@ -75,7 +75,7 @@ $(TARGET):$(LOCAL_SRC_FILES)
 	$(LOCAL_SRC_FILES) \
 	$(LOCAL_CPPFLAGS) \
 	$(LOCAL_LIBS) \
-	$(CFLAGS) 
+	$(CFLAGS)
 
 clean:
 	-$(RM) ../libs -rf

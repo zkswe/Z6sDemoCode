@@ -19,7 +19,7 @@ bool sendProtocol(const BYTE *pData, int len) {
 	BYTE dataBuf[DATA_LEN+DATA_PACKAGE_MIN_LEN];
 	// 判断数据长度是否超出限制
 	if (len > DATA_LEN) {
-		LOGE("The data length is inconsistent!!!");
+		LOGE("The data length over the limit!!!");
 		return false;
 	}
 

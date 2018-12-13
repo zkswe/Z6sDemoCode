@@ -11,7 +11,7 @@
 #include <string>
 #include "CommDef.h"
 
-#define DATA_LEN 256	//数组块的最大长度，不要超过2K
+#define DATA_LEN 256	//数据块的最大长度，不要超过2K
 
 // 数据块定义(用户有效数据)
 #pragma pack(push,1)

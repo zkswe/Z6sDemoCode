@@ -16,10 +16,9 @@
  * 需要根据协议格式进行拼接，以下只是个模板
  */
 bool sendProtocol(const BYTE *pData, int len) {
-	BYTE dataBuf[DATA_LEN];
-
+	BYTE dataBuf[DATA_LEN+DATA_PACKAGE_MIN_LEN];
 	// 判断数据长度是否超出限制
-	if (len > DATA_LEN - DATA_PACKAGE_MIN_LEN) {
+	if (len > DATA_LEN) {
 		LOGE("The data length is inconsistent!!!");
 		return false;
 	}

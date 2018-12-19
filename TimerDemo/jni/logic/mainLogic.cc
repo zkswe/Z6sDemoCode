@@ -153,3 +153,10 @@ static bool onButtonClick_ButtonTimerOff(ZKButton *pButton) {
     return false;
 }
 
+static bool onButtonClick_ButtonReset(ZKButton *pButton) {
+	//如果已经注册了定时器，将时间间隔重置为2000ms
+	if (isRegistered) {
+		mActivityPtr->resetUserTimer(TIMER_HANDLE, 2000);
+	}
+    return false;
+}

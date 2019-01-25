@@ -3,41 +3,6 @@
 #include "utils/TimeHelper.h"
 #include "restclient-cpp/restclient.h"
 
-
-
-#include "../curl/curl.h"
-int testCURLSSL () {
-    CURL *curl;
-    CURLcode res;
-
-    curl = curl_easy_init();
-    if (curl)
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://www.baidu.com");
-        /* google.com is redirected, so we tell LibCurl to follow redirection */
-        curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-        /* SSL Options */
-        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER , 1);
-        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST , 1);
-        /* Provide CA Certs from http://curl.haxx.se/docs/caextract.html */
-        curl_easy_setopt(curl, CURLOPT_CAINFO, "/etc/cacert.pem");
-
-        /* Perform the request, res will get the return code */
-        res = curl_easy_perform(curl);
-        /* Check for errors */
-        if(res != CURLE_OK)
-            LOGD("curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-
-        LOGD("success");
-        /* Always cleanup */
-        curl_easy_cleanup(curl);
-    }
-
-    return 0;
-}
-
-
-
 /**
  * 注册定时器
  * 填充数组用于注册定时器

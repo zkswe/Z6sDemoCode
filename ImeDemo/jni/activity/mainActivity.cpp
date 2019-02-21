@@ -4,6 +4,7 @@
 #include "mainActivity.h"
 
 /*TAG:GlobalVariable全局变量*/
+static ZKTextView* mTextview1Ptr;
 static ZKEditText* mEdittext1Ptr;
 static mainActivity* mActivityPtr;
 
@@ -123,6 +124,7 @@ const char* mainActivity::getAppName() const{
 //TAG:onCreate
 void mainActivity::onCreate() {
 	Activity::onCreate();
+    mTextview1Ptr = (ZKTextView*)findControlByID(ID_MAIN_Textview1);
     mEdittext1Ptr = (ZKEditText*)findControlByID(ID_MAIN_Edittext1);if(mEdittext1Ptr!= NULL){mEdittext1Ptr->setTextChangeListener(this);}
 	mActivityPtr = this;
 	onUI_init();
